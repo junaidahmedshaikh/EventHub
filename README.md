@@ -1,7 +1,7 @@
 
 # EventHub
 
-The EventHub is a platform designed to simplify the process of organizing and beautifying events. With its user-friendly interface and robust features, it empowers users to effortlessly book event decorations, schedule appointments, and connect with experienced decorators to bring their vision to life.
+The EventHub is a platform designed to simplify the process of organizing and beautifying events. With its user-friendly interface and robust features, it empowers users to effortlessly book event decorations, schedule appointments, and connect with decorator to bring their vision to life.
 
 
 
