@@ -1,8 +1,8 @@
 // import React from "react";
-import Navbar from "../../navbar";
-import Footer from "../../pages/component/mainComponent/footer";
+import Navbar from "../navbar";
+import Footer from "./component/homeComponent/footer";
 import { Outlet } from "react-router-dom";
-import { ContactInfoProvider } from "./smallComponent/ContactInfoProvider";
+import { ContactInfoProvider } from "./component/smallComponent/ContactInfoProvider";
 
 export default function layout() {
   // console.log(Outlet);

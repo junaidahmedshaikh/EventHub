@@ -1,5 +1,5 @@
 import Card from "../smallComponent/card.jsx";
-import cardData from "../smallComponent/cardData.jsx";
+import cardData from "../../../data/cardData.jsx";
 
 export default function category() {
   return (

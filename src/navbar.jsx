@@ -20,6 +20,7 @@ export default function navbar() {
               alt=""
               width="88"
               height="48"
+              aria-label="Brand Logo"
               src="https://res.cloudinary.com/difvkvxuy/image/upload/c_crop,w_330,h_300/v1716712923/DecorbyBuddy/dbblogowithoutbg.png"
             />
           </Link>{" "}
@@ -28,20 +29,47 @@ export default function navbar() {
           id="menu-nav"
           className="mt-2 gap-4 text-dark-secondary font-paraFont  hidden w-full lg:mt-0 lg:flex lg:w-auto"
         >
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/gallery">Gallery</Link>
-          <Link to="/getQuote"> Get a quote </Link>
+          <Link
+            className="hover:scale-110 hover:opacity-90 transition-all duration-200"
+            to="/"
+          >
+            Home
+          </Link>
+          <Link
+            className="hover:scale-110 hover:opacity-90 transition-all duration-200"
+            to="/about"
+          >
+            About
+          </Link>
+          <Link
+            className="hover:scale-110 hover:opacity-90 transition-all duration-200"
+            to="/event"
+          >
+            Event
+          </Link>
+          <Link
+            className="hover:scale-110 hover:opacity-90 transition-all duration-200"
+            to="/gallery"
+          >
+            Gallery
+          </Link>
+          <Link
+            className="hover:scale-110 hover:opacity-90 transition-all duration-200"
+            to="/contact"
+          >
+            {" "}
+            Get a quote{" "}
+          </Link>
         </NavLink>
         <div>
           <div className="hidden items-center gap-4 border-l border-base-300 pl-5 lg:flex">
             {" "}
             <a
               href="https://www.instagram.com/jas_officials/"
-              aria-label="Go to WOW Balloons Instagram"
+              aria-label="Go to Decor by Buddy Instagram"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-square btn-ghost"
+              className="btn btn-square btn-ghost hover:scale-110 hover:opacity-90 transition-all duration-200"
             >
               <FaInstagram className="text-title-color text-[25px]" />
             </a>{" "}
@@ -50,7 +78,7 @@ export default function navbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Call to the Decor By Buddy"
-              className="btn btn-square btn-ghost"
+              className="btn btn-square btn-ghost hover:scale-110 hover:opacity-90 transition-all duration-200"
             >
               <LiaPhoneSquareSolid className="text-title-color  text-[32px]" />
             </a>{" "}
@@ -61,6 +89,7 @@ export default function navbar() {
           onClick={() => {
             setOpen(!isOpen);
           }}
+          aria-label="Menu"
         >
           {isOpen ? <RiMenu4Fill /> : <MdOutlineClose />}
         </button>
@@ -77,10 +106,37 @@ export default function navbar() {
             id="menu-nav"
             className="flex flex-col mt-2 gap-4 text-dark-secondary font-semibold w-full lg:mt-0 lg:w-auto"
           >
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/gallery">Gallery</Link>
-            <Link to="/getQuote"> Get a quote </Link>
+            <Link
+              className="hover:scale-110 hover:opacity-90 transition-all duration-200"
+              to="/"
+            >
+              Home
+            </Link>
+            <Link
+              className="hover:scale-110 hover:opacity-90 transition-all duration-200"
+              to="/about"
+            >
+              About
+            </Link>
+            <Link
+              className="hover:scale-110 hover:opacity-90 transition-all duration-200"
+              to="/event"
+            >
+              Event
+            </Link>
+            <Link
+              className="hover:scale-110 hover:opacity-90 transition-all duration-200"
+              to="/gallery"
+            >
+              Gallery
+            </Link>
+            <Link
+              className="hover:scale-110 hover:opacity-90 transition-all duration-200"
+              to="/getQuote"
+            >
+              {" "}
+              Get a quote{" "}
+            </Link>
           </NavLink>
         </ul>{" "}
         <div className="mt-3 flex items-center gap-4 max-md:hidden">
@@ -89,7 +145,7 @@ export default function navbar() {
               {" "}
               <a
                 href="https://www.instagram.com/jas_officials/"
-                aria-label="Go to WOW Balloons Instagram"
+                aria-label="Go to Decor By Buddy Instagram"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-square btn-ghost"
@@ -103,7 +159,7 @@ export default function navbar() {
                 aria-label="Call to the Decor By Buddy"
                 className="btn btn-square btn-ghost"
               >
-                <LiaPhoneSquareSolid className="text-title-color rounded-md text-3xl rounded-2xl" />
+                <LiaPhoneSquareSolid className="text-title-color text-3xl rounded-2xl" />
               </a>
             </div>
           </div>

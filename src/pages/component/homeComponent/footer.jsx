@@ -7,9 +7,9 @@ import { useContactInfo } from "../smallComponent/ContactInfoProvider";
 export default function footer() {
   const { phoneNumber, emailAddress } = useContactInfo();
   return (
-    <div className="border-t border-secondary  bg-secondary pb-8 md:py-12">
+    <div className="border-t border-secondary  bg-secondary pt-10 pb-8 md:py-12">
       <div className="max-w-screen-xl w-full mx-auto px-5">
-        <div className="grid grid-cols-4 pb-10 text-dark-secondary ">
+        <div className="grid gap-4 lg:grid-cols-4 pb-10 text-dark-secondary ">
           <div className="flex flex-col gap-4 md:gap-2">
             <div className="flex flex-col gap-4 md:gap-2 border-b pb-5 w-8/12">
               <p className="text-lg font-bold font-sans text-title-color md:max-w-[42ch]">

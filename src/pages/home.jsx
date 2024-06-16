@@ -1,11 +1,12 @@
 // import Hero from './hero'
-import Hero from "./component/mainComponent/hero.jsx";
-import WelcomeBanner from "./component/mainComponent/welcomeBanner.jsx";
-import MiniContact from "./component/mainComponent/miniContect.jsx";
+import Hero from "./component/homeComponent/hero.jsx";
+import WelcomeBanner from "./component/homeComponent/welcomeBanner.jsx";
+// import MiniContact from "./component/homeComponent/miniContect.jsx";
 // import Footer from "./component/mainComponent/footer.jsx";
-import Category from "./component/mainComponent/category.jsx";
-import Feature from "./component/mainComponent/feature.jsx";
-import MiniGallery from "./component/mainComponent/miniGallery.jsx";
+import CommunityBanner from "./component/homeComponent/communityBanner.jsx";
+import Category from "./component/homeComponent/category.jsx";
+import Feature from "./component/homeComponent/feature.jsx";
+import MiniGallery from "./component/homeComponent/miniGallery.jsx";
 
 export default function home() {
   return (
@@ -15,7 +16,8 @@ export default function home() {
       <Category />
       <Feature />
       <MiniGallery />
-      <MiniContact />
+      <CommunityBanner />
+      {/* <MiniContact /> */}
     </div>
   );
 }

@@ -8,25 +8,26 @@ export default function hero() {
         backgroundImage:
           "url(https://res.cloudinary.com/difvkvxuy/image/upload/v1717320422/DecorbyBuddy/Hero/3d97cb28-9ba0-4545-8b41-39c8988a817f.png)",
       }}
-      className=" min-h-screen bg-cover bg-right bg-no-repeat"
+      alt="Hero Image"
+      className="sm:bg-center min-h-screen  bg-cover bg-right bg-no-repeat"
     >
       <div className="bg-black min-h-screen  flex items-center bg-opacity-10">
         <div className="max-w-screen-xl w-full mx-auto px-5 ">
           <div className="flex flex-col gap-4 text-white">
             <div className="text-primary primary-font">
-              <h1 className=" font-titleFont font-medium text-3xl md:text-4xl  lg:text-5xl lg:tracking-tight xl:tracking-tighter">
+              <h1 className=" font-titleFont font-medium text-2xl   md:text-3xl lg:tracking-tight xl:tracking-tighter">
                 <span className=" md:rounded-lg text-dark-secondary ">
                   Best{" "}
                 </span>
                 balloon decorations for your party
               </h1>
-              <p className="max-w-lg font-paraFont font-medium">
+              <p className="max-w-lg text-sm font-paraFont font-medium md:text-md">
                 {" "}
                 Welcome to the World of Balloon Magic: Elevating Every Occasion
                 with Creative Creations!{" "}
               </p>
             </div>
-            <div className="max-w-lg w-fit h-auto isolate rounded-xl bg-[#fff9] px-6 py-3 backdrop-blur ">
+            <div className="max-w-lg w-fit h-auto px-4 isolate rounded-xl bg-[#fff9] md:px-6 py-3 backdrop-blur ">
               <div role="alert" className="alert">
                 {" "}
                 <div>
