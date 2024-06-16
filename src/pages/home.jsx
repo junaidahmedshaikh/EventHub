@@ -17,7 +17,6 @@ export default function home() {
       <Feature />
       <MiniGallery />
       <CommunityBanner />
-      {/* <MiniContact /> */}
     </div>
   );
 }
