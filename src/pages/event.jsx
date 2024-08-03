@@ -1,6 +1,6 @@
 import CategoryCard from "./component/smallComponent/categoryCard";
 import Feature from "./component/homeComponent/feature";
-export default function event() {
+export default function Event() {
   const nameOfCategory = [
     "Corporate",
     "Birthday",

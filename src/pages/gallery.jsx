@@ -1,5 +1,5 @@
 import GallerySection from "./component/smallComponent/gallerySection";
-export default function gallery() {
+export default function Gallery() {
   const imageSrc = [
     "https://haplun.in/uploads/product_images/large/1681906118_7860220833.webp",
     "https://thejarvi.com/wp-content/uploads/2023/01/ani0005.jpg",

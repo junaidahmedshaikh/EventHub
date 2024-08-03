@@ -1,4 +1,33 @@
-export default function contact() {
+import React from "react";
+export default function Contact() {
+  const [result, setResult] = React.useState("");
+  let apiKey = import.meta.env.VITE_PUBLIC_API_KEY;
+
+  // console.log("API Key:", apiKey);
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", apiKey);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
   return (
     <section className="py-24 relative">
       <div className="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
@@ -18,7 +47,11 @@ export default function contact() {
               Basic Information
             </h4>
             {/* Form start */}
-            <form className="w-full flex-col justify-start items-start gap-8 flex">
+            <form
+              onSubmit={onSubmit}
+              className="w-full flex-col justify-start items-start gap-8 flex"
+            >
+              {/* <input type="hidden" name="access_key" value={apiKey} /> */}
               <div className="w-full flex-col justify-start items-start gap-1.5 flex">
                 <label
                   htmlFor="name"
@@ -40,7 +73,7 @@ export default function contact() {
                 </label>
                 <input
                   type="text"
-                  id="name"
+                  name="name"
                   className="w-full focus:outline-none text-gray-900 placeholder-gray-400 text-lg font-normal leading-relaxed px-5 py-3 rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] border border-gray-200 justify-start items-center gap-2 inline-flex"
                   placeholder="Junaid Shaikh"
                 />
@@ -67,7 +100,7 @@ export default function contact() {
                   </label>
                   <input
                     type="phone"
-                    id={"phone"}
+                    name={"phone"}
                     className="w-full focus:outline-none text-gray-900 placeholder-gray-400 text-lg font-normal leading-relaxed px-5 py-3 rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] border border-gray-200 justify-start items-center gap-2 inline-flex"
                     placeholder="9000000000"
                   />
@@ -81,6 +114,7 @@ export default function contact() {
                   </label>
                   <input
                     type="text"
+                    name="email"
                     className="w-full focus:outline-none text-gray-900 placeholder-gray-400 text-lg font-normal leading-relaxed px-5 py-3 rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] border border-gray-200 justify-start items-center gap-2 inline-flex"
                     placeholder="admin@gmail.com"
                   />
@@ -95,7 +129,7 @@ export default function contact() {
                   <div className="w-full justify-start items-start gap-7 flex sm:flex-row flex-col">
                     <div className="w-full flex-col justify-start items-start gap-1.5 flex">
                       <label
-                        htmlFor=""
+                        htmlFor="What is the occasion"
                         className="flex gap-1 items-center text-gray-600 text-base font-medium leading-relaxed"
                       >
                         What is the occasion?
@@ -104,7 +138,7 @@ export default function contact() {
                         Select an Option
                       </span> */}
                       <select
-                        name="event"
+                        name="What is the occasion"
                         className="w-full focus:outline-none text-gray-900 placeholder-gray-400 text-lg font-normal leading-relaxed px-5 py-3 rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] border border-gray-200 justify-start items-center gap-2 inline-flex"
                         placeholder="Select an Option"
                       >
@@ -121,7 +155,7 @@ export default function contact() {
                     </div>
                     <div className="w-full flex-col justify-start items-start gap-1.5 flex">
                       <label
-                        htmlFor="budget"
+                        htmlFor="Estimated Budget"
                         className="flex gap-1 items-center text-gray-600 text-base font-medium leading-relaxed"
                       >
                         Estimated Budget
@@ -129,6 +163,7 @@ export default function contact() {
                       <input
                         type="number"
                         id="budget"
+                        name="Estimated Budget"
                         className="w-full focus:outline-none text-gray-900 placeholder-gray-400 text-lg font-normal leading-relaxed px-5 py-3 rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] border border-gray-200 justify-start items-center gap-2 inline-flex"
                         placeholder="10000"
                       />
@@ -138,42 +173,42 @@ export default function contact() {
                   <div className="w-full justify-start items-start gap-7 flex sm:flex-row flex-col">
                     <div className="w-full flex-col justify-start items-start gap-1.5 flex">
                       <label
-                        htmlFor="projectDate"
+                        htmlFor="Project date"
                         className="flex gap-1 items-center text-gray-600 text-base font-medium leading-relaxed"
                       >
                         Project date
                       </label>
                       <input
                         type="date"
-                        id="projectDate"
+                        name="Project date"
                         className="w-full focus:outline-none text-gray-900 placeholder-gray-400 text-lg font-normal leading-relaxed px-5 py-3 rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] border border-gray-200 justify-start items-center gap-2 inline-flex"
                         placeholder="Smith"
                       />
                     </div>
                     <div className="w-full flex-col justify-start items-start gap-1.5 flex">
                       <label
-                        htmlFor="eventStart"
+                        htmlFor="Event Start Time?"
                         className="flex gap-1 items-center text-gray-600 text-base font-medium leading-relaxed"
                       >
                         Event Start Time?
                       </label>
                       <input
                         type="time"
-                        id="eventStart"
+                        name="Event Start Time?"
                         className="w-full focus:outline-none text-gray-900 placeholder-gray-400 text-lg font-normal leading-relaxed px-5 py-3 rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] border border-gray-200 justify-start items-center gap-2 inline-flex"
                         placeholder="John"
                       />
                     </div>
                     <div className="w-full flex-col justify-start items-start gap-1.5 flex">
                       <label
-                        htmlFor="eventEnd"
+                        htmlFor="Event End Time?"
                         className="flex gap-1 items-center text-gray-600 text-base font-medium leading-relaxed"
                       >
                         Event End Time?
                       </label>
                       <input
                         type="time"
-                        id="eventEnd"
+                        name="Event End Time?"
                         className="w-full focus:outline-none text-gray-900 placeholder-gray-400 text-lg font-normal leading-relaxed px-5 py-3 rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] border border-gray-200 justify-start items-center gap-2 inline-flex"
                         placeholder="Smith"
                       />
@@ -181,7 +216,7 @@ export default function contact() {
                   </div>
                   <div className="w-full flex-col justify-start items-start gap-1.5 flex">
                     <label
-                      htmlFor=""
+                      htmlFor="Event Address"
                       className="flex gap-1 items-center text-gray-600 text-base font-medium leading-relaxed"
                     >
                       Event Address
@@ -200,6 +235,7 @@ export default function contact() {
                     </label>
                     <input
                       type="text"
+                      name="Event Address"
                       className="w-full focus:outline-none text-gray-900 placeholder-gray-400 text-lg font-normal leading-relaxed px-5 py-3 rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] border border-gray-200 justify-start items-center gap-2 inline-flex"
                       placeholder="Tardeo, Mumbai Center"
                     />
@@ -208,7 +244,7 @@ export default function contact() {
               </div>
               <button
                 className=" rounded-lg bg-dark-secondary py-3.5 px-7 text-center align-middle font-sans text-md font-bold uppercase text-secondary shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                type="button"
+                type="submit"
               >
                 Submit
               </button>

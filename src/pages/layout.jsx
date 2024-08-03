@@ -1,5 +1,5 @@
 // import React from "react";
-import Navbar from "../navbar";
+import Navbar from "../Navbar";
 import Footer from "./component/homeComponent/footer";
 import { Outlet } from "react-router-dom";
 import { ContactInfoProvider } from "./component/smallComponent/ContactInfoProvider";

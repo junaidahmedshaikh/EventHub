@@ -7,7 +7,7 @@ import { NavLink, Link } from "react-router-dom";
 
 import { useState } from "react";
 
-export default function navbar() {
+export default function Navbar() {
   const [isOpen, setOpen] = useState(true);
   return (
     <section className="fixed top-0 z-50 w-full md:top-2">
@@ -37,25 +37,25 @@ export default function navbar() {
           </Link>
           <Link
             className="hover:scale-110 hover:opacity-90 transition-all duration-200"
-            to="/about"
+            to="/About"
           >
             About
           </Link>
           <Link
             className="hover:scale-110 hover:opacity-90 transition-all duration-200"
-            to="/event"
+            to="/Event"
           >
             Event
           </Link>
           <Link
             className="hover:scale-110 hover:opacity-90 transition-all duration-200"
-            to="/gallery"
+            to="/Gallery"
           >
             Gallery
           </Link>
           <Link
             className="hover:scale-110 hover:opacity-90 transition-all duration-200"
-            to="/contact"
+            to="/Contact"
           >
             {" "}
             Get a quote{" "}
@@ -114,25 +114,25 @@ export default function navbar() {
             </Link>
             <Link
               className="hover:scale-110 hover:opacity-90 transition-all duration-200"
-              to="/about"
+              to="/About"
             >
               About
             </Link>
             <Link
               className="hover:scale-110 hover:opacity-90 transition-all duration-200"
-              to="/event"
+              to="/Event"
             >
               Event
             </Link>
             <Link
               className="hover:scale-110 hover:opacity-90 transition-all duration-200"
-              to="/gallery"
+              to="/Gallery"
             >
               Gallery
             </Link>
             <Link
               className="hover:scale-110 hover:opacity-90 transition-all duration-200"
-              to="/getQuote"
+              to="/Contact"
             >
               {" "}
               Get a quote{" "}

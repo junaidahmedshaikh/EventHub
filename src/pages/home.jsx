@@ -8,7 +8,7 @@ import Category from "./component/homeComponent/category.jsx";
 import Feature from "./component/homeComponent/feature.jsx";
 import MiniGallery from "./component/homeComponent/miniGallery.jsx";
 
-export default function home() {
+export default function Home() {
   return (
     <div>
       <Hero />

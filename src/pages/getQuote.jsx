@@ -1,34 +1,38 @@
-import emailjs from "@emailjs/browser";
-import { useRef } from "react";
+// import React from "react";
+import { useState } from "react";
 import { useContactInfo } from "./component/smallComponent/ContactInfoProvider";
 
-export default function getQuote() {
-  const form = useRef();
-  const { phoneNumber, emailAddress, address } = useContactInfo();
-  const YOUR_TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
-  const YOUR_SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
-  const YOUR_PUBLIC_KEY = "osebbEGiVtBC6mr5j";
-  console.log(YOUR_PUBLIC_KEY);
-  const sendEmail = (e) => {
-    e.preventDefault();
+export default function GetQuote() {
+  const [result, setResult] = useState("");
 
-    emailjs
-      .sendForm(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, form.current, {
-        publicKey: YOUR_PUBLIC_KEY,
-      })
-      .then(
-        () => {
-          console.log(e, "200");
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-        }
-      );
-    document.querySelectorAll("input").forEach((input) => {
-      // console.log(element);
-      input.value = "";
+  const { phoneNumber, emailAddress, address } = useContactInfo();
+  const Public_Key = "7a2e7dc8-5ab4-4262-879d-d118b8fe7e49";
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", Public_Key);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
     });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+      console.log("Working");
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+      console.log("Error");
+    }
   };
+
   return (
     <section className="pt-32 px-32 max-md:px-20 max-sm:px-5">
       <div className="flex flex-col justify-center items-center py-20 px-32 my-5 border rounded border-dark-secondary bg-secondary max-md:px-20 max-sm:px-5">
@@ -104,11 +108,13 @@ export default function getQuote() {
             <a href="tel:11111111111">{phoneNumber}</a>
           </div>
         </div>
-        <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-4">
+        <form action={onSubmit} className="flex flex-col gap-4">
+          <input type="hidden" name="access_key" value={Public_Key} />
+
           {/* Full Name Input */}
           <div>
             <label
-              htmlFor="clientName"
+              htmlFor="name"
               className="mb-1 block text-md font-medium text-gray-700"
             >
               Full Name
@@ -116,7 +122,7 @@ export default function getQuote() {
             <input
               type="text"
               id="clientName"
-              name="clientName"
+              name="name"
               className=" bg-transparent h-10 w-72 rounded-lg text-para-color placeholder-transparent ring-2 px-2 ring-para-color focus:ring-sky-600 focus:outline-none "
               // className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500"
               placeholder="Enter Full Name"
@@ -291,8 +297,11 @@ export default function getQuote() {
           </div>
           {/* Submit Button */}
           <button
-            onSubmit={sendEmail}
-            className="px-8 py-4 w-1/3 bg-secondary text-dark-secondary font-bold rounded-full transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg"
+            // type="submit"
+            onClick={() => {
+              console.log("clicked");
+            }}
+            className="px-8 py-4 w-1/3 bg-secondary text-dark-secondary font-bold rounded-full  hover:shadow-lg"
           >
             Submit
           </button>

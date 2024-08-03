@@ -1,4 +1,4 @@
-export default function about() {
+export default function About() {
   return (
     <>
       <header className="bg-white p-8 pt-32">

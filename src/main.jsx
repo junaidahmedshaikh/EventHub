@@ -1,14 +1,14 @@
 import ReactDOM from "react-dom/client";
 import React from "react";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./index.css";
 // import Navbar from "./navbar.jsx";
-import Home from "./pages/home.jsx";
-import About from "./pages/about.jsx";
-import Event from "./pages/event.jsx";
-import Gallery from "./pages/gallery.jsx";
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
+import Event from "./pages/Event.jsx";
+import Gallery from "./pages/Gallery.jsx";
 // import GetQuote from "./pages/getQuote.jsx";
-import Contact from "./pages/contact.jsx";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Contact from "./pages/Contact.jsx";
 import Layout from "./pages/layout.jsx";
 
 const router = createBrowserRouter([
@@ -21,19 +21,19 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/about",
+        path: "/About",
         element: <About />,
       },
       {
-        path: "/event",
+        path: "/Event",
         element: <Event />,
       },
       {
-        path: "/gallery",
+        path: "/Gallery",
         element: <Gallery />,
       },
       {
-        path: "/contact",
+        path: "/Contact",
         element: <Contact />,
       },
     ],
