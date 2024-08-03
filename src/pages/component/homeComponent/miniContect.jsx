@@ -15,7 +15,7 @@ export default function miniContect() {
               here to share details about your upcoming event.
             </p>{" "}
             <a
-              href="/GetQuote"
+              href="/Contact"
               className="border border-biege-secondary p-5 rounded-md mt-10 hover:bg-biege-secondary hover:text-tertiary"
             >
               Get a quote

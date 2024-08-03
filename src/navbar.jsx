@@ -105,33 +105,36 @@ export default function Navbar() {
           <NavLink
             id="menu-nav"
             className="flex flex-col mt-2 gap-4 text-dark-secondary font-semibold w-full lg:mt-0 lg:w-auto"
+            onClick={() => {
+              setOpen(!isOpen);
+            }}
           >
             <Link
-              className="hover:scale-110 hover:opacity-90 transition-all duration-200"
+              className=" hover:translate-x-10 hover:opacity-90  duration-200"
               to="/"
             >
               Home
             </Link>
             <Link
-              className="hover:scale-110 hover:opacity-90 transition-all duration-200"
+              className="hover:translate-x-10 hover:opacity-90 transition-all duration-200"
               to="/About"
             >
               About
             </Link>
             <Link
-              className="hover:scale-110 hover:opacity-90 transition-all duration-200"
+              className="hover:translate-x-10 hover:opacity-90 transition-all duration-200"
               to="/Event"
             >
               Event
             </Link>
             <Link
-              className="hover:scale-110 hover:opacity-90 transition-all duration-200"
+              className="hover:translate-x-10 hover:opacity-90 transition-all duration-200"
               to="/Gallery"
             >
               Gallery
             </Link>
             <Link
-              className="hover:scale-110 hover:opacity-90 transition-all duration-200"
+              className="hover:translate-x-10 hover:opacity-90 transition-all duration-200"
               to="/Contact"
             >
               {" "}
