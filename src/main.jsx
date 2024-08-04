@@ -9,7 +9,7 @@ import Event from "./pages/Event.jsx";
 import Gallery from "./pages/Gallery.jsx";
 // import GetQuote from "./pages/getQuote.jsx";
 import Contact from "./pages/Contact.jsx";
-import Layout from "./pages/layout.jsx";
+import Layout from "./pages/Layout.jsx";
 
 const router = createBrowserRouter([
   {
